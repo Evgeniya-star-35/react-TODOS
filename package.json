@@ -1,5 +1,5 @@
 {
-  "name": "town-front",
+  "name": "react-todos",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -34,5 +34,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "eslint": "^8.17.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.1",
+    "prettier": "^2.7.0"
   }
 }
