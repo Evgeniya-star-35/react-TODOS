@@ -27,10 +27,9 @@ class App extends Component {
         return (
             <section className="section">
                 <Title value="Todos" />
-
                 <div>
-                    <p>Общее кол-во: {totalTodoCount}</p>
-                    <p>Кол-во выполненных: {completedTodoCount}</p>
+                    <p>Общее количество: {totalTodoCount}</p>
+                    <p>Количество выполненных: {completedTodoCount}</p>
                 </div>
 
                 <TodoList todos={todos} onDeleteTodo={this.deleteTodo} />
