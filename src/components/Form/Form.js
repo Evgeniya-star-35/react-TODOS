@@ -10,7 +10,8 @@ class Form extends Component {
     };
     handleSubmit = e => {
         e.preventDefault();
-        this.props.onSubmit(this.state.todoValue);
+        const message = this.state.todoValue;
+        this.props.addTodo(message);
         this.reset();
     };
     reset = () => {

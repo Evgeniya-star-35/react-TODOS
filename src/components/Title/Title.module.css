@@ -1,5 +1,5 @@
 .title {
-    color: brown;
+    color: rgb(22, 165, 60);
     text-transform: uppercase;
     text-align: center;
     font-size: 80px;
@@ -7,4 +7,8 @@
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
         'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     margin-top: 60px;
+}
+.title:hover,
+.title:focus {
+    color: rgb(16, 162, 164);
 }

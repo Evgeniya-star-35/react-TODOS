@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import shortid from 'shortid';
 import Title from './components/Title';
 import TodoList from './components/TodoList';
 import initialTodos from './todos.json';
@@ -9,14 +10,22 @@ class App extends Component {
     state = {
         todos: initialTodos,
     };
-
+    addTodo = text => {
+        const todo = {
+            id: shortid.generate(),
+            text,
+            completed: false,
+        };
+        this.setState(({ todos }) => ({
+            todos: [todo, ...todos],
+        }));
+    };
     deleteTodo = todoId => {
-        this.setState(prevState => ({
-            todos: prevState.todos.filter(todo => todo.id !== todoId),
+        this.setState(({ todos }) => ({
+            todos: todos.filter(todo => todo.id !== todoId),
         }));
     };
     toggleCompleted = todoId => {
-        console.log(todoId);
         this.setState(({ todos }) => ({
             todos: todos.map(todo =>
                 todo.id === todoId
@@ -24,9 +33,6 @@ class App extends Component {
                     : todo,
             ),
         }));
-    };
-    formSubmit = data => {
-        console.log(data);
     };
 
     render() {
@@ -40,7 +46,7 @@ class App extends Component {
         return (
             <section className="section">
                 <Title value="Todos" />
-                <Form onSubmit={this.formSubmit} />
+                <Form addTodo={this.addTodo} />
                 <TodoList
                     todos={todos}
                     onDeleteTodo={this.deleteTodo}

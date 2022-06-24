@@ -30,7 +30,8 @@
     }
 
     &--completed::before {
-        transform: scaleX(1.5);
+        transform: scaleX(1);
+        height: 7px;
     }
 }
 
@@ -60,7 +61,8 @@
 
     &:hover,
     &:focus {
-        background-color: $indigo-accent;
+        background-color: $blue-accent;
+        outline: 2px solid rgb(35, 218, 35);
     }
 
     &:active {
