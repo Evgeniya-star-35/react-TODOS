@@ -1,0 +1,27 @@
+@import 'src/styles/_shared.scss';
+.TodoEditor {
+    width: 565px;
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    border: 1px solid $black;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.TodoEditor__input {
+    width: 500px;
+    $line-height: 16px;
+    padding: 12px 16px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    font: inherit;
+    line-height: $line-height;
+    letter-spacing: 0.01em;
+    resize: none;
+    margin-bottom: 12px;
+
+    &:focus-within {
+        outline: 4px solid rgb(35, 218, 35);
+    }
+}
