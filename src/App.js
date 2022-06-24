@@ -34,14 +34,18 @@ class App extends Component {
             ),
         }));
     };
+    calculateCompletedTodos = () => {
+        const { todos } = this.state;
+        return todos.reduce(
+            (total, todo) => (todo.completed ? total + 1 : total),
+            0,
+        );
+    };
 
     render() {
         const { todos } = this.state;
         const totalTodoCount = todos.length;
-        const completedTodoCount = todos.reduce(
-            (total, todo) => (todo.completed ? total + 1 : total),
-            0,
-        );
+        const completedTodoCount = this.calculateCompletedTodos();
 
         return (
             <section className="section">
